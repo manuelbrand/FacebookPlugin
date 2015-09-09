@@ -23,7 +23,7 @@ import org.json.JSONObject;
  
 import java.util.Arrays;
  
-public class InvitePlugin extends CordovaPlugin {
+public class FacebookPlugin extends CordovaPlugin {
  
     private String previewImagePath = "http://wzzrb.nl/appinvite/1.png"; // 1-2-3-4.png
     private String AppDownloadUrl = "https://fb.me/400072263520020";
