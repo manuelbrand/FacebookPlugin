@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-facebook-wazzurb"
+        version="0.1.0">
+
+    <name>FacebookPlugin</name>
+    <description>Facebook Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,plugin,facebook,invite,login</keywords>
+
+    <engines>
+        <engine name="cordova-android" version=">=4.0.0-dev" />
+        <engine name="cordova-ios" version="3.9.1" />
+    </engines>
+
+    <js-module src="www/FacebookPlugin.js" name="FacebookPlugin">
+        <clobbers target="FacebookPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FacebookPlugin">
+                <param name="android-package" value="com.telerik.wazzurb.FacebookPlugin"/>
+            </feature>
+            <access origin="https://m.facebook.com" />
+            <access origin="https://graph.facebook.com" />
+            <access origin="https://api.facebook.com" />
+            <access origin="https://*.fbcdn.net" />
+            <access origin="https://*.akamaihd.net" />
+        </config-file>
+
+        <source-file src="src/android/FacebookPlugin.java" target-dir="src/com/telerik/wazzurb"/>
+
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="FacebookPlugin">
+                <param name="ios-package" value="InvitePlugin"/>
+            </feature>
+            <access origin="https://m.facebook.com" />
+            <access origin="https://graph.facebook.com" />
+            <access origin="https://api.facebook.com" />
+            <access origin="https://*.fbcdn.net" />
+            <access origin="https://*.akamaihd.net" />
+        </config-file>
+
+        <header-file src="src/ios/FacebookPlugin.h" target-dir="FacebookPlugin"/>
+        <source-file src="src/ios/FacebookPlugin.m" target-dir="FacebookPlugin"/>
+
+    </platform>
+
+</plugin>
